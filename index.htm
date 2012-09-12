@@ -1,0 +1,122 @@
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>mmd.js - The minimal markdown parser in JS.</title>
+<style>
+body
+{
+    position:relative;
+    max-width:100%;
+    width:40rem;
+    margin:1.5em auto;
+    font:normal 1em/1.5 sans-serif;
+    color:#eee;
+    background:#444;
+}
+article a
+{
+	color:#0ff;
+}
+footer
+{
+	margin-top:1.5em;
+	text-align:center;
+}
+article img
+{
+    width:100%;
+}
+article code
+{
+	color:#099;
+    background:#233;
+    padding:.5ex;
+}
+article blockquote,
+article pre
+{
+    width:100%;
+    box-sizing:border-box;
+    background:#233;
+    padding:1ex;
+    break-word:break-all;
+    word-wrap: break-word;
+}
+article pre code
+{
+    padding:0;
+}
+article ul,
+article ol
+{
+	padding:0 0 0 1ex;
+}
+article li
+{
+	list-style-position:inside;
+}
+
+</style>
+</head>
+<body><article id='parsed'><noscript id='md'>
+
+# Hello, this is mmd.js
+
+[mmd.js](mmd.js) is a standalone minimalist Markdown parser written in ~860 bytes of JavaScript.
+
+All the cool kids use Markdown. If you are not familiar with it already, have a look at the [original Markdown syntax](http://daringfireball.net/projects/markdown/syntax). Then have a look at the source code of this page, it is written in Markdown and parsed using [mmd.js](mmd.js).
+
+## How does **mmd.js** works ?
+
+First it splits the source strings 
+
+## How to use **mmd.js** ?
+
+    <script src=mmd.min.js></script>
+	<script>alert( mmd('Markdown is **sweet**') );</script>
+
+
+## Supported features
+
+* Headers # 
+* Blockquotes >
+* Ordered lists 1
+* Unordered lists *
+* Paragraphs *just skip a line*
+* Links []()
+* Images![]()
+* Inline <em> emphasis *
+* Inline <strong> emphasis **
+
+## Unsupported features
+
+* References and IDs
+* Escaping of Markdown characters
+* Nesting
+
+## Why ?
+
+[mmd.js](mmd.js) is the result of some very intensive yak shaving. Let's be honest, it was just an excuse to procastinate and do something different.
+
+
+That's all folks.
+
+</noscript></article>
+<script src='mmd.min.js'></script>
+<script>
+
+onload = function()
+{
+	var $ = function(id){ return document.getElementById(id); };
+    var src = $('md').textContent;
+    var then = Date.now();
+    var html = mmd(src);
+    var now = Date.now();
+
+    document.title += ' Just parsed '+ src.length +' md -> '+ html.length +'b html in '+ (now-then) +'ms';
+    $('parsed').innerHTML = html;
+}
+
+</script>
+</body>
+</html>
