@@ -1,6 +1,6 @@
 # Hello, this is mmd.js
 
-[mmd.js](mmd.js) is a standalone minimalist Markdown parser written in ~860 bytes of JavaScript.
+[mmd.js](mmd.js) is a standalone minimalist Markdown parser written in less than 900 bytes of JavaScript.
 
 All the cool kids use Markdown. If you are not familiar with it already, have a look at the [original Markdown syntax](http://daringfireball.net/projects/markdown/syntax). Then have a look at the source code of this page, it is written in Markdown and parsed using [mmd.js](mmd.js).
 
@@ -18,7 +18,7 @@ First it splits the source strings
 
 * Headers # 
 * Blockquotes >
-* Ordered lists 1
+* Ordered lists 1., 2., ...
 * Unordered lists *
 * Paragraphs *just skip a line*
 * Links []()

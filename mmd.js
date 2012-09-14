@@ -31,13 +31,14 @@
     .replace(/^\s+|\r|\s+$/g, '')
     .replace(/\t/g, '    ')
     .split(/\n\n+/)
-    .forEach(function(b, f)
+    .forEach(function(b, f, r)
     {
         f=b[0];
+        r=/\d+\. /g;
         h+=
 	        f=='#'?(f=b.indexOf(' '),'<h'+f+'>'+inlineEscape(b.slice(f+1))+'</h'+f+'>'):
 			f=='*'?'<ul><li>'+multiline(b, '* ', '</li>\n<li>' )+'</li></ul>':
-	        f=='1'?'<ol><li>'+multiline(b, '1 ', '</li>\n<li>' )+'</li></ol>':
+		r.test(b)?'<ol><li>'+multiline(b.replace(r, ''), '', '</li>\n<li>')+'</li></ol>':
 	        f==' '?'<pre><code>'+multiline(b, '    ') +'</code></pre>':
 	        f=='>'?'<blockquote>'+multiline(b, '> ')+'</blockquote>':
 	        f=='<'?b:
