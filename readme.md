@@ -6,7 +6,7 @@ All the cool kids use Markdown. If you are not familiar with it already, have a 
 
 ## How does **mmd.js** work ?
 
-The input text is split into blocks separated by one or more blank lines. The type of each block is determined by checking its first character. Simple.
+The input text is split into blocks separated by one or more blank lines. In this version, the type of each block is determined using a regular expression which is also used to split each of its lines. This allow to be closer to the original Markdown syntax.
 
 ## How to use **mmd.js** ?
 
