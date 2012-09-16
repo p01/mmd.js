@@ -1,12 +1,12 @@
 # Hello, this is mmd.js
 
-[mmd.js](mmd.js) is a standalone minimalist Markdown parser written in ~830 bytes of JavaScript.
+[mmd.js](mmd.js) is a standalone minimalist Markdown parser written in ~815 bytes of JavaScript.
 
 All the cool kids use Markdown. If you are not familiar with it already, have a look at the [original Markdown syntax](http://daringfireball.net/projects/markdown/syntax). Check the source code of this page, it is written in Markdown and parsed using [mmd.js](mmd.js).
 
 ## How does **mmd.js** work ?
 
-The input text is split into blocks separated by one or more blank lines. The type of each block is determined by checking its first character. Simple.
+The input text is split into blocks separated by one or more blank lines. In this version, the type of each block is determined by checking of the first character of the block then using a regular expression to split the multilines blocks. This allow to be closer to the original Markdown syntax.
 
 ## How to use **mmd.js** ?
 
