@@ -1,7 +1,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>mmd.js - The minimal markdown parser in JS.</title>
+<title>mmd.js - The minimalist markdown parser in JS.</title>
 <style>
 body
 {
@@ -10,12 +10,12 @@ body
     width:40rem;
     margin:1.5em auto;
     font:normal 1em/1.5 sans-serif;
-    color:#eee;
-    background:#444;
+    color:#333;
+    background:#ccc;
 }
 article a
 {
-	color:#0ff;
+	color:#369;
 }
 footer
 {
@@ -66,15 +66,18 @@ article li
 
 All the cool kids use Markdown. If you are not familiar with it already, have a look at the [original Markdown syntax](http://daringfireball.net/projects/markdown/syntax). Check the source code of this page, it is written in Markdown and parsed using [mmd.js](mmd.js).
 
+## Why so small ?
+
+[mmd.js](mmd.js) is only small because of its simple design and feature set. Using dirty size optimization tricks it should be possible to reach the 5-600 bytes mark. Maybe smaller. Except that's not the idea. Enough yak shaving!
+
 ## How does **mmd.js** work ?
 
-The input text is split into blocks separated by one or more blank lines. In this version, the type of each block is determined by checking of the first character of the block then using a regular expression to split the multilines blocks. This allow to be closer to the original Markdown syntax.
+The input text is split into blocks separated by one or more blank lines. The type of each block is determined by checking the first character of the block. Headers, HTML and paragraphs are handled separetely. Multi line blocks are split using a regular expression. HTML escaping and span elements ( link, images, emphasis ) are processed for each line of the blocks. This allow to be close to the original Markdown syntax.
 
 ## How to use **mmd.js** ?
 
     <script src=mmd.min.js></script>
-	<script>alert( mmd('Markdown is **sweet**') );</script>
-
+	<script>console.log( mmd('Markdown is **sweet**') );</script>
 
 ## Supported features
 
@@ -84,7 +87,7 @@ The input text is split into blocks separated by one or more blank lines. In thi
 * Unordered lists *
 * Paragraphs
 * Links []()
-* Images![]()
+* Images ![]()
 * Inline <em> emphasis *
 * Inline <strong> emphasis **
 
@@ -93,6 +96,10 @@ The input text is split into blocks separated by one or more blank lines. In thi
 * References and IDs
 * Escaping of Markdown characters
 * Nesting
+
+## Supported browsers
+
+So far [mmd.js](mmd.js) has been tested in recent versions of Opera ( all flavours including Mini ), Chrome and Firefox. Pull requests addressing compatibility issues are most welcome, esp. regarding IE and Safari.
 
 ## Why ?
 

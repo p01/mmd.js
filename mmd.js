@@ -9,7 +9,7 @@
 	function inlineEscape(s)
 	{
 		return escape(s)
-			.replace(/!\[([^\]]*)]\(([^(]+)\)/g, '<img alt="$1" src="$2"/>')
+			.replace(/!\[([^\]]*)]\(([^(]+)\)/g, '<img alt="$1" src="$2">')
 			.replace(/\[([^\]]+)]\(([^(]+)\)/g, '$1'.link('$2'))
 			.replace(/`([^`]+)`/g, '<code>$1</code>')
 			.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
