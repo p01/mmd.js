@@ -27,7 +27,7 @@
 		{
 			'*':[/\n\* /,'<ul><li>','</li></ul>'],
 			'1':[/\n[1-9]\d*\.? /,'<ol><li>','</li></ol>'],
-			' ':[/\n    /,'<pre><code>','</pre></code>','\n'],
+			' ':[/\n    /,'<pre><code>','</code></pre>','\n'],
 			'>':[/\n> /,'<blockquote>','</blockquote>','\n']
 		}[f];
 		h+=
