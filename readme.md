@@ -19,15 +19,15 @@ The input text is split into blocks separated by one or more blank lines. The ty
 
 ## Supported features
 
-* Headers # 
-* Blockquotes >
-* Ordered lists 1
-* Unordered lists *
+* Headers `#` 
+* Blockquotes `>`
+* Ordered lists `1`
+* Unordered lists `*`
 * Paragraphs
-* Links []()
-* Images ![]()
-* Inline <em> emphasis *
-* Inline <strong> emphasis **
+* Links `[]()`
+* Images `![]()`
+* Inline `<em>` emphasis `*`
+* Inline `<strong>` emphasis `**`
 
 ## Unsupported features
 
