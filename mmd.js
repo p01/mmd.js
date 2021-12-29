@@ -10,7 +10,7 @@
 	{
 		return escape(s)
 			.replace(/!\[([^\]]*)]\(([^(]+)\)/g, '<img alt="$1" src="$2">')
-			.replace(/\[([^\]]+)]\(([^(]+?)\)/g, '$1'.link('$2'))
+			.replace(/\[([^\]]+)]\(([^(]+?)\)/g, '<a href="$2">$1</a>')
 			.replace(/`([^`]+)`/g, '<code>$1</code>')
 			.replace(/(\*\*|__)(?=\S)([^\r]*?\S[*_]*)\1/g, '<strong>$2</strong>')
 			.replace(/(\*|_)(?=\S)([^\r]*?\S)\1/g, '<em>$2</em>');
